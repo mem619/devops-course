@@ -1,0 +1,428 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  background: #eee;
+}
+
+.modal-dialog {
+  max-width: 950px !important;
+  user-select: none;
+}
+
+.modal-content {
+  background: #1E1E1E !important;
+  margin-top: 40px;
+}
+
+.modal-header {
+  border-bottom: unset !important;
+  z-index: 3;
+  background: #252526;
+  box-shadow: 0 8px 6px -6px black;
+  height: 62px;
+}
+
+.modal-footer {
+  border-top: unset !important;
+  padding-top: unset;
+}
+
+.modal-body {
+  color: #d0d0d0;
+  ;
+  z-index: 2;
+  min-height: 250px;
+}
+
+.menu-item {
+  cursor: pointer;
+}
+
+.close-icon,
+h5 {
+  color: #C4C4C4;
+  font: 15px/1.5 Monaco, MonoSpace;
+  font-size: 1.2em;
+}
+
+.modal-title {
+  display: inline-block;
+}
+
+.tab-modal {
+  background: #1E1E1E !important;
+  position: absolute;
+  top: 0;
+  height: 62px;
+  left: 0;
+  padding: 1rem 1rem;
+}
+
+.tab-modal .close-icon {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+  color: #6b6b6b;
+  padding-left: 13px;
+}
+
+.icon-tab {
+  color: #46a0ec;
+}
+
+.data-sumary {
+  text-align: left;
+}
+
+.template-image {
+  display: none;
+}
+
+.slides-template,
+.resources {
+  display: none;
+}
+
+.title-x {
+  position: absolute;
+  left: 20px;
+}
+
+.links button {
+  margin: 23px 10px 11px 0px;
+  cursor: pointer;
+}
+
+
+.about {
+  position: fixed;
+  z-index: 10;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: all 0.2s ease;
+}
+
+.about .bg_links {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  backdrop-filter: blur(5px);
+  position: absolute;
+}
+
+.about .logo {
+  width: 40px;
+  height: 40px;
+  z-index: 9;
+  background-image: url(https://rafaelalucas91.github.io/assets/codepen/logo_white.svg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 10px 7px;
+  opacity: 0.9;
+  transition: all 1s 0.2s ease;
+  bottom: 0;
+  right: 0;
+}
+
+.about .social {
+  opacity: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.about .social .icon {
+  width: 100%;
+  height: 100%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  display: flex;
+  transition: all 0.2s ease, background-color 0.4s ease;
+  opacity: 0;
+  border-radius: 100%;
+}
+
+.about .social.portfolio {
+  transition: all 0.8s ease;
+}
+
+.about .social.portfolio .icon {
+  background-image: url(https://rafaelalucas91.github.io/assets/codepen/link.svg);
+}
+
+.about .social.dribbble {
+  transition: all 0.3s ease;
+}
+
+.about .social.dribbble .icon {
+  background-image: url(https://rafaelalucas91.github.io/assets/codepen/dribbble.svg);
+}
+
+.about .social.linkedin {
+  transition: all 0.8s ease;
+}
+
+.about .social.linkedin .icon {
+  background-image: url(https://rafaelalucas91.github.io/assets/codepen/linkedin.svg);
+}
+
+.about:hover {
+  width: 105px;
+  height: 105px;
+  transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .logo {
+  opacity: 1;
+  transition: all 0.6s ease;
+}
+
+.about:hover .social {
+  opacity: 1;
+}
+
+.about:hover .social .icon {
+  opacity: 0.9;
+}
+
+.about:hover .social:hover {
+  background-size: 28px;
+}
+
+.about:hover .social:hover .icon {
+  background-size: 65%;
+  opacity: 1;
+}
+
+.about:hover .social.portfolio {
+  right: 0;
+  bottom: calc(100% - 40px);
+  transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .social.portfolio .icon:hover {
+  background-color: #698fb7;
+}
+
+.about:hover .social.dribbble {
+  bottom: 45%;
+  right: 45%;
+  transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .social.dribbble .icon:hover {
+  background-color: #0077b5;
+}
+
+.about:hover .social.linkedin {
+  bottom: 0;
+  right: calc(100% - 40px);
+  transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .social.linkedin .icon:hover {
+  background-color: #0077b5;
+}
+
+.wrapper {
+  width: 100vw;
+  margin: 0 auto;
+  height: 400px;
+  background-color: #161616;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    height: 700px;
+  }
+}
+
+.content-card {
+  max-width: 1024px;
+  width: 100%;
+  padding: 0 4%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .content-card {
+    padding-top: 300px;
+    flex-direction: column;
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  min-width: 200px;
+  height: 230px;
+  background-color: #292929;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+  border: 2px solid rgba(7, 7, 7, 0.12);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  max-width: 80px;
+  background: linear-gradient(90deg, #1976d2 0%, #022a52 40%, rgba(0, 0, 0, 0.28) 60%);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: all 0.8s ease;
+  background-position: 0px;
+  background-size: 200px;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.card .title {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.card .text {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-weight: 200;
+  letter-spacing: 2px;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  height: 270px;
+}
+
+.card:hover .info {
+  height: 90%;
+}
+
+.card:hover .text {
+  transition: all 0.3s ease;
+  opacity: 1;
+  max-height: 40px;
+}
+
+.card:hover .icon {
+  background-position: -120px;
+  transition: all 0.3s ease;
+}
+
+.card:hover .icon i {
+  background: linear-gradient(90deg, #1976d2, #022a52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.modal-body {
+  max-height: 550px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: .5em;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.devops-label {
+  background: transparent;
+  position: absolute;
+  cursor: pointer;
+  margin-left: 20px;
+  user-select: none;
+  font-size: 70px;
+  color: #1d8dde;
+  font-family: "Arial Black", Gadget, sans-serif;
+  text-shadow: 0px 0px 0 rgb(24,136,217),
+              1px 1px 0 rgb(19,131,212),
+              2px 2px 0 rgb(14,126,207),
+              3px 3px 0 rgb(9,121,202),
+              4px 4px 0 rgb(4,116,197),
+              5px 5px 0 rgb(-1,111,192),
+              6px 6px 0 rgb(-6,106,187),
+              7px 7px 0 rgb(-11,101,182),
+              8px 8px 0 rgb(-16,96,177),
+              9px 9px 0 rgb(-21,91,172),
+              10px 10px  0 rgb(-26,86,167),
+              11px 11px 10px rgba(0,0,0,0.23),
+              11px 11px 1px rgba(0,0,0,0.5),
+              0px 0px 10px rgba(0,0,0,.2);
+}
