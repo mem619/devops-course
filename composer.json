@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "post-install-cmd": [
+            "@test"
+        ],
+        "test": [
+            "node ./tests/test.js"
+        ]
+    }
+}
